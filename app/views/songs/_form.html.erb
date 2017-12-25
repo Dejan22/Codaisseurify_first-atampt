@@ -1,0 +1,14 @@
+<!-- app/views/songs/_form.html.erb -->
+
+<%= form_for @song do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :track %>
+  <%= f.number_field :track %>
+
+
+  <%= f.submit (@song.new_record? ? "Create" : "Update") %>
+
+<% end %>
