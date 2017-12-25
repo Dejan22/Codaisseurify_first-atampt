@@ -1,8 +1,7 @@
-<!-- app/views/autorsnew.html.erb -->
-
-<h1>New Artist</h1>
+<!-- app/views/artists/_form.html.erb -->
 
 <%= form_for @artist do |f| %>
+
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -12,9 +11,6 @@
   <%= f.label :image_url %>
   <%= f.text_field :image_url %>
 
-  <%= f.submit "Create" %>
-  
-  <h1>New Artist</h1>
+  <%= f.submit (@artist.new_record? ? "Create" : "Update") %>
 
-<%= render "form" %>
 <% end %>
