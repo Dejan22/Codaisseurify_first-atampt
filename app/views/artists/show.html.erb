@@ -1,15 +1,28 @@
 <!-- app/views/artists/show.html.erb -->
-
+<div class="panel panel-primary">
+  <div class="panel-heading">
 <h1><%= @artist.name %></h1>
 
+  </div>
+
+  <div class="panel-body">
+    <%= link_to "Delete artist", artist_path(@artist), method: :delete, class: "btn btn-primary", data: { confirm: "Are you sure?" } %><br>
+  <div class="panel-body">
+      <%= link_to "New song", songs_path(@song), method: :create, class: "btn btn-primary", data: { confirm: "Are you sure?" } %><br>
+
+<hr>
 <p>description: <%= @artist.description %></p>
 <%= image_tag @artist.image_url %>
 <h3> Songs by this artists </h3>
+
+<div id="song-list" class="panel-body">
 <% Song.where(artist_id: @artist.id).each do |artist| %>
+
+
 <li> <%= artist.name %> </li>
+
+
 <% end %>
 
-<hr>
 
-<%= link_to "[Edit]", edit_artist_path(@artist.id) %>
-<%= link_to "[Delete]", artist_path(@artist.id), method: :delete, data: { confirm: "Are you sure?" } %>
+<hr>

@@ -1,13 +1,15 @@
-songsclass SongsController < ApplicationController
+class SongsController < ApplicationController
   def index
     @songs = Song.all
   end
   def show
     @song = Song.find(params[:id])
   end
+
   def new
     @song = Song.new
   end
+
   def create
     @song = Song.new(song_params)
 
@@ -40,6 +42,6 @@ songsclass SongsController < ApplicationController
   private
 
   def song_params
-   song.require(:song).permit(:name, :track)
+   song.require(:song).permit(:name, :track, :artist_id)
   end
 end
