@@ -6,6 +6,7 @@ artist2 = Artist.create!( { name: "Toledo", description: "It plays as acid-jazz 
 song_1 = Song.create!(
   name: "Don't Misunderstand",
   track: 1,
+  artist_id: 1
 
 
 )
@@ -13,6 +14,7 @@ song_1 = Song.create!(
 song_2 = Song.create!(
   name: "Don't Talk",
   track: 2,
+  artist_id: 1
 
 
 )
@@ -20,18 +22,21 @@ song_2 = Song.create!(
 song_3 = Song.create!(
   name: "It Gonna Come",
   track: 3,
+  artist_id: 1
 
 )
 
 song_4 = Song.create!(
   name: "Death Took a Holiday",
   track: 1,
+  artist_id: 2
 
 )
 
 song_5 = Song.create!(
   name: "Danny",
   track: 2,
+  artist_id: 2
 
 
 )

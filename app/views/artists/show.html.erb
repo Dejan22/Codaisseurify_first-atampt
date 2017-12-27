@@ -4,6 +4,10 @@
 
 <p>description: <%= @artist.description %></p>
 <%= image_tag @artist.image_url %>
+<h3> Songs by this artists </h3>
+<% Song.where(artist_id: @artist.id).each do |artist| %>
+<li> <%= artist.name %> </li>
+<% end %>
 
 <hr>
 
